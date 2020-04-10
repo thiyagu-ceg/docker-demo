@@ -6,7 +6,7 @@ before_install:
   - docker build -t thiyaga/docker-demo -f Dockerfile.dev .
 
 script:
-  - docker run -e CI=true thiyaga/docker-demo npm run test -- -- coverage  
+  - docker run -e CI=true thiyaga/docker-demo npm run test  
 
 deploy:
   provider: elasticbeanstalk
