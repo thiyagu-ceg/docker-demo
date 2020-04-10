@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+  
+before_install:
+  - docker build -t thiyaga/docker-demo -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true thiyaga/docker-demo npm run test  
+
